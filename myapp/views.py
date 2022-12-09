@@ -8,6 +8,12 @@ def index(request):
         'age' : 23,
         'nationality' : "Nepali"
     }
-    return render(request,"index.html", context)
+    return render(request,"index.html")
+
+def counter(request):
+    text = request.GET.get("text") 
+    amount_of_word = len(text.split())
+    return render(request, 'counter.html', {'amount': amount_of_word})
+
 
 
