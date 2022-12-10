@@ -10,10 +10,38 @@ def index(request):
     }
     return render(request,"index.html")
 
+from django.shortcuts import render
+
+
+# defining function for wordcounter
 def counter(request):
-    text = request.GET.get("text") 
-    amount_of_word = len(text.split())
-    return render(request, 'counter.html', {'amount': amount_of_word})
+	# checking if method is POST or not
+	if request.method == 'POST':
+
+		# taking text input
+		text = request.POST['text']
+
+		# checking weather text is empty
+		# or not
+		if text != '':
+
+			# splitting the text and taking length
+			# of that
+			amount_of_word = len(text.split())
+
+			# returning HTML page with data, if calculated
+			# successfully
+			return render(request, 'counter.html',
+						{'amount': amount_of_word})
+
+		else:
+			# returning HTML page without data, if any
+			# error occurs
+			return render(request, 'counter.html', {'on': 'active'})
+
+	else:
+		# returning HTML page if request.method is not POST
+		return render(request, 'counter.html', {'on': 'active'})
 
 
 
