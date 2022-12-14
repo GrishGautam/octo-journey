@@ -1,31 +1,32 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Feature
-# Create your views here.
+# Create y views here.
 
 def index(request):
+
 	feature1 = Feature()
 	feature1.id = 0
 	feature1.name = "Fast"
-	feature1.details = "our service is very quick"
+	feature1.details = "service is very quick"
 
 	feature2 = Feature()
 	feature2.id = 1
-	feature2.name = "Easy to use and"
-	feature2.details = "our service is very Easy to use"
+	feature2.name = "Easy to use"
+	feature2.details = "service is very Easy to use"
 
 	feature3 = Feature()
 	feature3.id = 2
 	feature3.name = "Reliable"
-	feature3.details = "our service is Reliable"
+	feature3.details = "service is Reliable"
 
 	feature4 = Feature()
 	feature4.id = 3
 	feature4.name = "Affordable"
-	feature4.details = "our service is very affordable"
-	feature = [feature2,feature1,feature3,feature4]
+	feature4.details = "service is very affordable"
+	features = [feature2,feature1,feature3,feature4]
 
-	return render(request,"index.html", {'feature' : feature,})
+	return render(request,"index.html", {'features' : features})
 
 
 # defining function for wordcounter
