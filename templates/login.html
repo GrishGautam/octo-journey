@@ -1,0 +1,24 @@
+
+<style>
+    h3{
+        color: red;
+    }
+    
+</style>
+<h1>Login now:</h1>
+
+
+{% for message in messages %}
+<h3> {{message}}</h3>
+{% endfor %}
+
+<form method="POST" action="login">
+    {% csrf_token %}
+    <P>Username</P>
+    <input type="text" name = "username" />
+
+    <P>Enter your password</P>
+    <input type="password" name = "password" />
+    <input type="submit"/>
+
+</form>
