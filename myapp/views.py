@@ -13,6 +13,10 @@ def logout(request):
 def post(request,pk):
 	return render(request,'post.html',{'pk': pk})
 
+def counter(request):
+	posts = [1,2,3,4,5,'tim', 'tom','grish']
+	return render(request,'counter.html',{'posts':posts})	
+
 
 
 def index(request):

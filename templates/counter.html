@@ -1,1 +1,3 @@
-<h1>the amount of words is {{amount}}</h1>
+{% for post in posts %}
+<h1><a href = "{% url 'post' post %}"/> posts </h1>
+{%endfor%}
