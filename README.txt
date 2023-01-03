@@ -1,0 +1,1 @@
+This is a list of projects i did in order to learn django.
